@@ -1,5 +1,5 @@
 dirCur="$( cd "$( dirname "${BASH_SOURCE[0]}" )/" && pwd )"
-export ITHEMAL_HOME=$dirCur/Ithemal
+export ITHEMAL_HOME=$dirCur
 export PYTHONPATH=$ITHEMAL_HOME/learning/pytorch
 
 # TODO: update path of DYNAMORIO_HOME
