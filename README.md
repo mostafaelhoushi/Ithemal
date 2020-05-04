@@ -18,19 +18,35 @@ Ithemal does not currently handle UNK tokens, so this model will likely not gene
 
 ## Environment Setup
 
-You first need to install [docker](https://github.com/docker/docker-install) and [docker-compose](https://docs.docker.com/compose/install/).
+Unlike the main repo, this fork does not use docker. Also, this repo has converted the code from Python2 to Python3.
 
-It is easiest to run Ithemal within the provided docker environment.
-To build the docker environment, run `docker/docker_build.sh`.
-No user interaction is required during the build, despite the various prompts seemingly asking for input.
-
-Once the docker environment is built, connect to it with `docker/docker_connect.sh`.
-This will drop you into a tmux shell in the container.
-It will also start a Jupyter notebook exposed on port 8888 with the password `ithemal`; nothing depends on this except for your own convenience, so feel free to disable exposing the notebook by removing the port forwarding on lines 37 and 38 in `docker/docker-compose.yml`.
-The file system in the container is mounted from the local file system, so changes to the file system on the host will propagate to the docker instance, and vice versa.
-The container will continue running in the background, even if you exit.
-The container can be stopped with `docker/docker_stop.sh` from the host machine.
-To detach from the container while keeping jobs running, use the normal tmux detach command of `Control-b d`; running `docker/docker_connect.sh` will drop you back into the same session.
+To get started you can do the following:
+1. Clone the repo:
+```
+git clone https://github.com/mostafaelhoushi/Ithemal.git
+```
+2. Change directory into repo:
+```
+cd Ithemal
+```
+3. [Recommended] Set up a Python3.x separate virtualenv:
+```
+virtualenv .venv --prompt="(Ithemal) " --python=/usr/bin/python3.6
+source .venv/bin/activate
+```
+OR set up a separate Conda environment
+```
+conda create --name py_ithemal python=3.6
+activate py_ithemal
+```
+4. Install the required packages:
+```
+pip install -r requirements.txt
+```
+5. Export some required environment variables:
+```
+source env_setup.source
+```
 
 ## Prediction
 
