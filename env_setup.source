@@ -1,0 +1,4 @@
+export ITHEMAL_HOME=/home/m00476721/Ithemal
+export DYNAMORIO_HOME=/home/m00476721/DynamoRIO-Linux-7.1.0-1/
+export PYTHONPATH=/home/m00476721/Ithemal/learning/pytorch
+export LD_LIBRARY_PATH=/home/m00476721/DynamoRIO-Linux-7.1.0-1/lib64/debug:$LD_LIBRARY_PATH
