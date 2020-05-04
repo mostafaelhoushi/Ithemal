@@ -10,4 +10,4 @@ fi
 "${ITHEMAL_HOME}"/data_collection/build_dynamorio.sh
 
 cd "${ITHEMAL_HOME}"/common
-pip install --user -e .
+pip install -e .

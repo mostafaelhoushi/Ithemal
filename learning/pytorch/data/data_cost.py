@@ -62,7 +62,7 @@ class DataInstructionEmbedding(Data):
             curr_mem = self.mem_start
             for _ in range(1): # repeat for duplicated blocks
                 # handle missing or incomplete code_intel
-                split_code_intel = itertools.chain((code_intel or '').split('\n'), itertools.repeat(''))
+                split_code_intel = itertools.chain((code_intel or '').split(b'\n'), itertools.repeat(b''))
                 for (instr, m_code_intel) in zip(block_root, split_code_intel):
                     raw_instr = []
                     opcode = int(instr.find('opcode').text)
