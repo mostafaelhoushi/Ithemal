@@ -4,4 +4,10 @@ export PYTHONPATH=$ITHEMAL_HOME/learning/pytorch
 
 # TODO: update path of DYNAMORIO_HOME
 export DYNAMORIO_HOME=/home/m00476721/DynamoRIO-Linux-7.1.0-1/
-export LD_LIBRARY_PATH=/home/m00476721/DynamoRIO-Linux-7.1.0-1/lib64/debug:$LD_LIBRARY_PATH
+if [ -f $DYNAMORIO_HOME ]
+then
+    echo "Path $DYNAMORIO_HOME does not exist"
+    echo "You need to download DynamoRIO and update its path in this source file"
+else
+    export LD_LIBRARY_PATH=$DYNAMORIO_HOME/lib64/debug:$LD_LIBRARY_PATH
+fi
